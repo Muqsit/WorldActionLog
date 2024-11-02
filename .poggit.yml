@@ -1,0 +1,13 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/Muqsit/WorldActionLog
+build-by-default: true
+branches:
+- master
+projects:
+  WorldActionLog:
+    path: ""
+    libs:
+      - src: poggit/libasynql/libasynql
+        version: ^4.2.3
+      - src: SOF3/await-generator/await-generator
+        version: ^3.6.1
+...
