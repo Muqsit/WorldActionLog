@@ -1,0 +1,12 @@
+name: WorldActionLog
+main: muqsit\worldactionlog\Loader
+api: 5.0.0
+version: 0.0.1
+commands:
+  wal:
+    description: Read world action logs
+    permission: worldactionlog.command.wal
+permissions:
+  worldactionlog.command.wal:
+    description: Grants access to /wal command
+    default: op

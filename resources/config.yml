@@ -1,0 +1,25 @@
+# Number of entries to display per page when listing logs (/wal)
+entries-per-page: 25
+
+# Logging actions to enable. The server will only observe these
+# actions.
+enabled-actions:
+  - wal:block_entity_break
+  - wal:block_entity_interact
+  - wal:block_entity_place
+  - wal:inventory_open
+
+# Message formats for every action
+action-formats:
+  - action: wal:block_entity_break
+    format: "{player_gamertag} broke {block_entity} at {x}x {y}y {z}z"
+  - action: wal:block_entity_interact
+    format: "{player_gamertag} interacted with {block_entity} at {x}x {y}y {z}z"
+  - action: wal:block_entity_place
+    format: "{player_gamertag} placed {block_entity} at {x}x {y}y {z}z"
+  - action: wal:chunk_enter
+    format: "{player_gamertag} entered at {x}x {y}y {z}z"
+  - action: wal:chunk_exit
+    format: "{player_gamertag} left at {x}x {y}y {z}z"
+  - action: wal:inventory_open
+    format: "{player_gamertag} opened {block_entity} at {x}x {y}y {z}z"
