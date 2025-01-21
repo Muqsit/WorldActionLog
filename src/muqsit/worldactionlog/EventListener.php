@@ -182,13 +182,16 @@ final class EventListener{
 		}
 
 		$pos = $inventory->getHolder();
+		if($pos->world === null){
+			return;
+		}
+
 		$player = $event->getPlayer();
-		$world = $player->getWorld();
 		$tags = Utils::writePlayer($player);
-		$tile = $world->getTileAt($pos->x, $pos->y, $pos->z);
+		$tile = $pos->world->getTileAt($pos->x, $pos->y, $pos->z);
 		if($tile !== null){
 			$tags["block_entity"] = $this->tile_factory->getSaveId($tile::class);
 		}
-		$this->log($world, $pos->x, $pos->y, $pos->z, $action, $tags);
+		$this->log($pos->world, $pos->x, $pos->y, $pos->z, $action, $tags);
 	}
 }
