@@ -5,7 +5,7 @@ entries-per-page: 25
 # actions.
 enabled-actions:
   - wal:block_entity_break
-  - wal:block_entity_interact
+# - wal:block_entity_interact
   - wal:block_entity_place
   - wal:inventory_open
 
