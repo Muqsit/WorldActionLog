@@ -13,7 +13,6 @@ use poggit\libasynql\SqlError;
 use SOFe\AwaitGenerator\Await;
 use Symfony\Component\Filesystem\Path;
 use function array_column;
-use function array_combine;
 
 final class Database{
 
@@ -130,6 +129,6 @@ final class Database{
 	 */
 	public function selectEntryTags(int $id) : Generator{
 		$rows = yield from $this->asyncSelect("worldactionlog.select.tags_by_id", ["id" => $id]);
-		return array_combine(array_column($rows, "tag"), array_column($rows, "value"));
+		return array_column($rows, "value", "tag");
 	}
 }
